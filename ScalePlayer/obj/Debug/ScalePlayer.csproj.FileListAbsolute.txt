@@ -4,3 +4,9 @@ D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.csproj.AssemblyRefere
 D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.csproj.CoreCompileInputs.cache
 D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.dll
 D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.pdb
+C:\Users\ADMIN\Documents\GitHub\RandomSizePlayer\ScalePlayer\bin\Debug\ScalePlayer.dll
+C:\Users\ADMIN\Documents\GitHub\RandomSizePlayer\ScalePlayer\bin\Debug\ScalePlayer.pdb
+C:\Users\ADMIN\Documents\GitHub\RandomSizePlayer\ScalePlayer\obj\Debug\ScalePlayer.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\GitHub\RandomSizePlayer\ScalePlayer\obj\Debug\ScalePlayer.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\GitHub\RandomSizePlayer\ScalePlayer\obj\Debug\ScalePlayer.dll
+C:\Users\ADMIN\Documents\GitHub\RandomSizePlayer\ScalePlayer\obj\Debug\ScalePlayer.pdb

@@ -20,7 +20,7 @@ namespace RandomSizePlayer
     {
         private const string modGUID = "nexor.RandomSizePlayer";
         private const string modName = "RandomSizePlayer";
-        private const string modVersion = "0.0.1";
+        private const string modVersion = "0.0.2";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -74,7 +74,7 @@ namespace RandomSizePlayer
 
             Logger = base.Logger;
             harmony.PatchAll();
-            Logger.LogInfo("RandomSizePlayer 0.0.1 loaded.");
+            Logger.LogInfo("RandomSizePlayer 0.0.2 loaded.");
         }
     }
 
@@ -87,6 +87,13 @@ namespace RandomSizePlayer
         [HarmonyPostfix]
         private static void postfix(PlayerControllerB __instance)
         {
+            // 获取自己的 NetworkManager
+            NetworkManager networkManager = __instance.NetworkManager;
+
+            // RandomSizePlayer.Logger.LogInfo("awake! find player is server?" + networkManager.IsServer);
+            // 如果自己不是server的话，该mod就不要生效
+            if (!networkManager.IsServer) return;
+
             float x, y, z;
 
             x = RandomSizePlayer.Instance.k1.Value;
@@ -96,7 +103,7 @@ namespace RandomSizePlayer
             // 隐藏面罩
             if (RandomSizePlayer.Instance.hide_your_visor.Value)
             {
-                __instance.localVisorTargetPoint.position = new Vector3(10f, 10f, 10f);
+                __instance.localVisorTargetPoint.position = new Vector3(-10f, -10f, -10f);
             }
 
             // 不随机则取设定值
