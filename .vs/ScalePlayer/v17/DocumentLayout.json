@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\coding\\vs\\ScalePlayer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67D1B2EB-C706-4D88-BEBF-A2EDF2DAAA4D}|ScalePlayer\\ScalePlayer.csproj|d:\\coding\\vs\\scaleplayer\\scaleplayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67D1B2EB-C706-4D88-BEBF-A2EDF2DAAA4D}|ScalePlayer\\ScalePlayer.csproj|solutionrelative:scaleplayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\coding\\vs\\ScalePlayer\\ScalePlayer\\Class1.cs",
+              "RelativeDocumentMoniker": "ScalePlayer\\Class1.cs",
+              "ToolTip": "D:\\coding\\vs\\ScalePlayer\\ScalePlayer\\Class1.cs",
+              "RelativeToolTip": "ScalePlayer\\Class1.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAAG8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T12:24:55.725Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

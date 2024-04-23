@@ -1,0 +1,6 @@
+D:\coding\vs\ScalePlayer\ScalePlayer\bin\Debug\ScalePlayer.dll
+D:\coding\vs\ScalePlayer\ScalePlayer\bin\Debug\ScalePlayer.pdb
+D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.csproj.AssemblyReference.cache
+D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.csproj.CoreCompileInputs.cache
+D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.dll
+D:\coding\vs\ScalePlayer\ScalePlayer\obj\Debug\ScalePlayer.pdb
