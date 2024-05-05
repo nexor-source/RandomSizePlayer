@@ -44,6 +44,7 @@ public class SerializableVector3
 }
 
 
+// 正常使用终端的功能
 namespace RandomSizePlayer
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace RandomSizePlayer
     {
         private const string modGUID = "nexor.RandomSizePlayer";
         private const string modName = "RandomSizePlayer";
-        private const string modVersion = "0.0.7";
+        private const string modVersion = "0.0.9";
 
         private readonly Harmony harmony = new Harmony(modGUID);
 
@@ -232,7 +233,7 @@ namespace RandomSizePlayer
 
             Logger = base.Logger;
             harmony.PatchAll();
-            Logger.LogInfo("RandomSizePlayer 0.0.7 loaded.");
+            Logger.LogInfo("RandomSizePlayer 0.0.9 loaded.");
 
             Load_Dict();
         }
@@ -295,13 +296,18 @@ namespace RandomSizePlayer
                 _y = UnityEngine.Random.Range(-1f, 1f);
                 _z = UnityEngine.Random.Range(-1f, 1f);
 
-                x = (1f / (1f + Mathf.Exp(-4f * _x * RandomSizePlayer.Instance.player_sharpness.Value)) - 0.5f) * 2f * 1.6f;
-                y = 1f / (1f + Mathf.Exp(-2f * _y * RandomSizePlayer.Instance.player_sharpness.Value)) * 1.8f;
-                z = 1f / (1f + Mathf.Exp(-4f * _z * RandomSizePlayer.Instance.player_sharpness.Value)) * 1.65f;
+                // (-1.5,1.5)    (0.215,1.585)    (0.03,1.62) 
+                x = (1f / (1f + Mathf.Exp(-4f * _x * RandomSizePlayer.Instance.player_sharpness.Value)) - 0.5f) * 2f * 1.55f;
+                y = 1f / (1f + Mathf.Exp(-2f * _y * RandomSizePlayer.Instance.player_sharpness.Value)) * 1.75f;
+                z = 1f / (1f + Mathf.Exp(-4f * _z * RandomSizePlayer.Instance.player_sharpness.Value)) * 1.6f;
 
                 // 是否按比例缩放
                 if (RandomSizePlayer.Instance.lock_player_portion.Value) __instance.transform.localScale = new Vector3(y, y, y);
-                else __instance.transform.localScale = new Vector3(x, y, z);
+                else
+                {
+                    __instance.transform.localScale = new Vector3(x, y, z);
+                    RandomSizePlayer.Logger.LogInfo("applied " + new Vector3(x, y, z) + " to " + __instance.playerUsername);
+                }
             }
 
         }
@@ -311,8 +317,6 @@ namespace RandomSizePlayer
     /// <summary>
     /// 家具size的修改
     /// </summary>
-
-
     [HarmonyPatch(typeof(ShipBuildModeManager))]
     internal class ShipBuildModeManager_Patch
     {
@@ -348,6 +352,9 @@ namespace RandomSizePlayer
         }
     }
 
+    /// <summary>
+    /// 家具预设大小文件的读取与应用
+    /// </summary>
     [HarmonyPatch(typeof(StartOfRound))]
     internal class StartOfRound_Patch
     {
@@ -375,4 +382,17 @@ namespace RandomSizePlayer
             }
         }
     }
+
+
+    /*[HarmonyPatch(typeof(NetworkObject))]
+    internal class NetworkObjectPatch
+    {
+        // Token: 0x06000003 RID: 3 RVA: 0x000020DC File Offset: 0x000002DC
+        [HarmonyPatch("Spawn")]
+        [HarmonyPostfix]
+        private static void postfix(NetworkObject __instance)
+        {
+            __instance.transform.localScale = new Vector3(RandomSizePlayer.Instance.k1.Value * __instance.transform.localScale.x, RandomSizePlayer.Instance.k2.Value * __instance.transform.localScale.y, RandomSizePlayer.Instance.k3.Value * __instance.transform.localScale.z);
+        }
+    }*/
 }
